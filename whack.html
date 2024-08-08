@@ -1,0 +1,35 @@
+<script>
+window.onload = () => {
+	score = 0
+	scoreboard=document.createElement("p")
+	scoreboard.innerHTML = "score: "+score
+	document.body.appendChild(scoreboard)
+
+
+
+	buttons = []
+	for(i=0; i<3; i++){
+		button = document.createElement("button")
+		button.innerHTML = "O"
+		document.body.appendChild(button)
+		buttons.push(button)
+
+
+		button.onclick = (event) => {
+			if(event.srcElement.innerHTML == "X") {
+				event.srcElement.innerHTML = "O"
+				score++
+				scoreboard.innerHTML = "score: "+score
+			}
+		}
+
+	}
+	cur = 0
+	setInterval(()=>{
+		buttons[cur].innerHTML = "0"
+		cur = Math.floor(Math.random()*3)
+		buttons[cur].innerHTML = "X"
+	},500)
+
+}
+</script>
