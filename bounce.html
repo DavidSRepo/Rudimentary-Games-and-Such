@@ -22,26 +22,29 @@ window.onload = () => {
 	setInterval(() =>{
 		if(x<0){
 			xvel = 1
+			bounce.style.backgroundColor = colors[colorIndex]
+			colorIndex = (colorIndex + 1) % colors.length
 			}
 			else if(x>window.innerWidth - 100) {
 				xvel = -1
+				bounce.style.backgroundColor = colors[colorIndex]
+				colorIndex = (colorIndex + 1) % colors.length
 			}
 		if(y<0){
 			yvel = 1
+			bounce.style.backgroundColor = colors[colorIndex]
+			colorIndex = (colorIndex + 1) % colors.length
 			}
 			else if(y>window.innerHeight - 100) {
 				yvel = -1
+				bounce.style.backgroundColor = colors[colorIndex]
+				colorIndex = (colorIndex + 1) % colors.length
 			}
 
 		x+=xvel*5
 		y+=yvel*5
 		bounce.style.left = x+"px"
 		bounce.style.top = y+"px"
-
-
-	bounce.style.backgroundColor = colors[colorIndex]
-	colorIndex = (colorIndex + 1) % colors.length
-		
 
 	}, 1000/60)
 
